@@ -36,11 +36,8 @@ module RiotAPI
     # call strategy with action and arguments
     def call(strategy, action, *args)
       stra = instance_variable_get :"@#{strategy}" 
-      if stra.nil?
-        raise StrategyNotRegistered
-      else
-        stra.send action, args
-      end
+      raise StrategyNotRegistered if stra.nil?
+      stra.send action, args
     end
     
   end
