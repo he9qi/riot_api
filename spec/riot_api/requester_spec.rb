@@ -6,7 +6,7 @@ describe RiotAPI::Requester do
   let(:mock_strategy) { OpenStruct.new summoner: request_url }
   let(:requester)     { mock_strategy.extend(RiotAPI::Requester) }
   let(:conn)          { requester.conn }
-  let(:file)          { File.read File.join(File.expand_path(File.dirname(__FILE__)), "./fixtures/summoner.json") }
+  let(:file)          { File.read File.join(File.expand_path(File.dirname(__FILE__)), "../fixtures/summoner.json") }
   let(:response)      { OpenStruct.new body: JSON.parse(file) }
   
   before do
