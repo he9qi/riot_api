@@ -21,7 +21,7 @@ describe Riot::API do
       
       before do
         Riot::API.register("summoner")
-        class MockFaraday; def get(url); OpenStruct.new(body: "user"); end; end
+        class MockFaraday; def get(url); OpenStruct.new(body: "foo"); end; end
         Faraday.stub(:new) { MockFaraday.new }
       end
       
@@ -32,6 +32,21 @@ describe Riot::API do
         Riot::API.call("summoner", "find_by_names", "1")
       end
       
+      it "uses summoner directly" do
+        expect(Riot::API.summoner).to \
+          receive(:by_names).with("1").and_return("url")
+          
+        Riot::API.summoner.find_by_names "1"
+      end
+      
+    end
+    
+    describe "#register_all" do
+      before { Riot::API.register_all }
+      
+      it "registers all strategies" do
+        Riot::API.respond_to?(:team).should be(true)
+      end
     end
     
   end

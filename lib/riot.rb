@@ -14,14 +14,4 @@ module Riot
   require_relative 'api'
   require_relative 'requester'
   
-  def self.logger=(logger)
-    @logger = logger
-  end
-  
-  def self.logger
-    @logger ||= Logger.new($stdout).tap do |log|
-      log.progname = 'Riot'
-    end
-  end
-  
 end

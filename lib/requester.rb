@@ -6,7 +6,7 @@ module Riot
     end
     
     def call(action, *args, &block)
-      if action =~ /^by_(.+)$/
+      if action =~ /by_(.+)$/
         url = self.send action, *args[0]
       else
         url = self.send action

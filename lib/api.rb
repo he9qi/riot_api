@@ -13,6 +13,16 @@ module Riot
       @key = key
     end
     
+    # register all strategies using the files in strategies folder
+    def register_all
+      dirs = Dir.entries File.join(File.expand_path(File.dirname(__FILE__)), "strategies") 
+      dirs.delete(".")
+      dirs.delete("..")
+      dirs.map! { |dir| dir.sub(".rb", "") }
+      dirs.each { |stra| register(stra) }
+    end
+    
+    # register a strategy
     def register(strategy)
       stra_sym = :"@#{strategy}" 
       stra = instance_variable_get stra_sym
@@ -23,6 +33,7 @@ module Riot
       end
     end
     
+    # call strategy with action and arguments
     def call(strategy, action, *args)
       stra = instance_variable_get :"@#{strategy}" 
       if stra.nil?
