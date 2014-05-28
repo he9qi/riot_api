@@ -11,8 +11,9 @@ module RiotAPI
       else
         url = self.send action
       end
-      response = conn.get url + "?api_key=#{API.key}"
-      response.body
+      resp = conn.get url, api_key: API.key
+      resp = resp[0] if resp.is_a?(Array)
+      resp.body
     end
     
     def method_missing(meth, *args, &block)  

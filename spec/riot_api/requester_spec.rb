@@ -16,8 +16,7 @@ describe RiotAPI::Requester do
   describe "#find" do
     
     it "calls only when find is present" do
-      url = "#{request_url}?api_key=abc"
-      expect(conn).to receive(:get).with(url).and_return(response)
+      expect(conn).to receive(:get).with(request_url, {:api_key=>"abc"}).and_return(response)
       requester.find_summoner
     end
     

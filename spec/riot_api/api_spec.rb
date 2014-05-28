@@ -21,20 +21,22 @@ describe RiotAPI::API do
       
       before do
         RiotAPI::API.register("summoner")
-        class MockFaraday; def get(url); OpenStruct.new(body: "foo"); end; end
-        Faraday.stub(:new) { MockFaraday.new }
+        stubs = Faraday::Adapter::Test::Stubs.new do |stub|
+          stub.get("/url") { [200, {}, 'foo'] }
+        end
+        Faraday.stub(:new) { stubs }
       end
       
       it "calls summoner's method" do
         expect(RiotAPI::API.summoner).to \
-          receive(:by_names).with("1").and_return("url")
+          receive(:by_names).with("1").and_return("/url")
           
         RiotAPI::API.call("summoner", "find_by_names", "1")
       end
       
       it "uses summoner directly" do
         expect(RiotAPI::API.summoner).to \
-          receive(:by_names).with("1").and_return("url")
+          receive(:by_names).with("1").and_return("/url")
           
         RiotAPI::API.summoner.find_by_names "1"
       end
