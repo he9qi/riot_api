@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe Riot::Strategies::Stats do
+describe RiotAPI::Strategies::Stats do
   
-  let(:strategy) { Riot::Strategies::Stats.new }
+  let(:strategy) { RiotAPI::Strategies::Stats.new }
   
   it "returns request url" do
     strategy.request_url.should eq("https://prod.api.pvp.net/api/lol/na/v1.3/stats")

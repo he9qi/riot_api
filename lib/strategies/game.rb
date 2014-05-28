@@ -1,6 +1,6 @@
 # game-v1.3
 
-module Riot
+module RiotAPI
   module Strategies
     
     class Game < Default

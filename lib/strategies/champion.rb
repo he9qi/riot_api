@@ -1,6 +1,6 @@
 # champion-v1.2
 
-module Riot
+module RiotAPI
   module Strategies
     
     class Champion < Default

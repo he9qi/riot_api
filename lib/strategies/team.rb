@@ -1,6 +1,6 @@
 # team-v2.3
 
-module Riot
+module RiotAPI
   module Strategies
     
     class Team < Default

@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe Riot::Strategies::Summoner do
+describe RiotAPI::Strategies::Summoner do
   
-  let(:strategy) { Riot::Strategies::Summoner.new }
+  let(:strategy) { RiotAPI::Strategies::Summoner.new }
   
   it "returns request url" do
     strategy.request_url.should eq("https://prod.api.pvp.net/api/lol/na/v1.4/summoner")

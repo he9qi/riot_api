@@ -1,4 +1,4 @@
-module Riot
+module RiotAPI
   module Requester
     
     def conn

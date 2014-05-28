@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe Riot::Strategies::Champion do
+describe RiotAPI::Strategies::Champion do
   
-  let(:strategy) { Riot::Strategies::Champion.new }
+  let(:strategy) { RiotAPI::Strategies::Champion.new }
   
   it "returns request url" do
     strategy.request_url.should eq("https://prod.api.pvp.net/api/lol/na/v1.2/champion")

@@ -1,4 +1,4 @@
-module Riot
+module RiotAPI
   module API
     
     class StrategyNotRegistered < StandardError; end
@@ -27,8 +27,8 @@ module Riot
       stra_sym = :"@#{strategy}" 
       stra = instance_variable_get stra_sym
       if stra.nil?
-        strategy_class = eval("Riot::Strategies::#{strategy.camel_case}")
-        instance_variable_set stra_sym, strategy_class.new.extend(Riot::Requester)
+        strategy_class = eval("RiotAPI::Strategies::#{strategy.camel_case}")
+        instance_variable_set stra_sym, strategy_class.new.extend(RiotAPI::Requester)
         define_method(strategy) { instance_variable_get stra_sym }
       end
     end

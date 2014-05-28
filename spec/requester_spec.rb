@@ -1,16 +1,16 @@
 require 'spec_helper'
 
-describe Riot::Requester do
+describe RiotAPI::Requester do
   
   let(:request_url)   { "https://prod.api.pvp.net/api/lol/na/v1.4/summoner/by-name/tiqoo" }
   let(:mock_strategy) { OpenStruct.new summoner: request_url }
-  let(:requester)     { mock_strategy.extend(Riot::Requester) }
+  let(:requester)     { mock_strategy.extend(RiotAPI::Requester) }
   let(:conn)          { requester.conn }
   let(:file)          { File.read File.join(File.expand_path(File.dirname(__FILE__)), "./fixtures/summoner.json") }
   let(:response)      { OpenStruct.new body: JSON.parse(file) }
   
   before do
-    Riot::API.stub(:key) { "abc" }
+    RiotAPI::API.stub(:key) { "abc" }
   end
   
   describe "#find" do

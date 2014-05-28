@@ -1,6 +1,6 @@
 # summoner-v1.4
 
-module Riot
+module RiotAPI
   module Strategies
     
     class Summoner < Default

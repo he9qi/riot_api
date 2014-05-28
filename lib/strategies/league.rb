@@ -1,6 +1,6 @@
 # league-v2.4
 
-module Riot
+module RiotAPI
   module Strategies
     
     class League < Default

@@ -1,4 +1,4 @@
-module Riot
+module RiotAPI
   require 'faraday'
   require 'extlib'
   

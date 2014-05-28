@@ -1,6 +1,6 @@
 # lol-static-data-v1.2
 
-module Riot
+module RiotAPI
   module Strategies
     
     class LolStaticData < Default

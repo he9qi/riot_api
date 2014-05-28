@@ -5,20 +5,35 @@ https://developer.riotgames.com/api
 
 Setup API with API Key
 
-`Riot::API.setup("abc")`
+```Ruby
+RiotAPI::API.setup("abc")
+```
 
 
 Register API strategy
 
-`Riot::API.register("summoner")`
+```Ruby
+RiotAPI::API.register("summoner")
+```
+or
+```Ruby
+RiotAPI::API.register_all
+```
 
+
+Get url
 
 ```Ruby
+RiotAPI::API.summoner.by_names "lanjj"
+```
 
-# use call
-Riot::API.call("summoner", "find_by_names", "lanjj")
 
-# use summoner directly
-Riot::API.summoner.find_by_names "lanjj"
+Request
 
+```Ruby
+RiotAPI::API.call("summoner", "find_by_names", "lanjj")
+```
+or
+```Ruby
+RiotAPI::API.summoner.find_by_names "lanjj"
 ```

@@ -1,4 +1,4 @@
-module Riot
+module RiotAPI
   module Strategies
     class StrategyNotFound < StandardError; end
     
