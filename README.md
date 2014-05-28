@@ -3,14 +3,14 @@ Ruby Riot Game API Wrapper
 
 https://developer.riotgames.com/api
 
-- Setup API with API Key
+** Setup API with API Key
 
 ```Ruby
 RiotAPI::API.setup("abc")
 ```
 
 
-- Register API strategy
+** Register API strategy
 
 ```Ruby
 RiotAPI::API.register("summoner")
@@ -21,14 +21,14 @@ RiotAPI::API.register_all
 ```
 
 
-- Get API url
+** Get API url
 
 ```Ruby
 RiotAPI::API.summoner.by_names "lanjj"
 ```
 
 
-- Request API
+** Request API
 
 ```Ruby
 RiotAPI::API.call("summoner", "find_by_names", "lanjj")
