@@ -4,6 +4,7 @@ Ruby Riot Game API Wrapper
 https://developer.riotgames.com/api
 
 [![Code Climate](https://codeclimate.com/github/he9qi/riot_api.png)](https://codeclimate.com/github/he9qi/riot_api)
+[![Code Climate](https://codeclimate.com/github/he9qi/riot_api/coverage.png)](https://codeclimate.com/github/he9qi/riot_api)
 
 #### Setup API with API Key
 
