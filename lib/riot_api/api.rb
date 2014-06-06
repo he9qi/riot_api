@@ -1,7 +1,7 @@
 module RiotAPI
   module API
     
-    class StrategyNotRegistered < StandardError; end
+    StrategyNotRegistered = Class.new StandardError
     
     extend self
     
