@@ -6,7 +6,7 @@ module RiotAPI
       
       def initialize(params={})
         @options = {
-          host:   "https://prod.api.pvp.net/api",
+          host:   "https://na.api.pvp.net/api",
           game:   "lol",
           region: "na",
         }.merge(params)

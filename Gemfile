@@ -4,7 +4,7 @@ gem 'extlib'
 gem 'faraday'
 
 group :development, :test do
-  gem "rspec" 
+  gem "rspec"
   gem 'guard-rspec', require: false
 end
 
