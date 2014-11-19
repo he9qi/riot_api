@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'extlib'
 gem 'faraday'
+gem 'simplecov', '~> 0.9'
 
 group :development, :test do
   gem "rspec"
